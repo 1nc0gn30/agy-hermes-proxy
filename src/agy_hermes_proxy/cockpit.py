@@ -643,12 +643,12 @@ def render_cockpit_html(
       <article class="card">
         <div class="kpi-label">Live Model Catalog</div>
         <div class="kpi-value" id="kpiModels">{len(models)}</div>
-        <div class="kpi-sub">TTL-cached `agy models` discovery</div>
+        <div class="kpi-sub">TTL-cached <code>agy models</code> discovery</div>
       </article>
       <article class="card">
         <div class="kpi-label">Concurrency Slots</div>
         <div class="kpi-value" id="kpiSlots">{active_requests} / {max_concurrency}</div>
-        <div class="kpi-sub">Semaphore-bounded (`429` backpressure)</div>
+        <div class="kpi-sub">Semaphore-bounded (<code>429</code> backpressure)</div>
       </article>
       <article class="card">
         <div class="kpi-label">Total Requests</div>
@@ -663,7 +663,7 @@ def render_cockpit_html(
         <span class="pill">Strict 404 on unknown IDs</span>
       </div>
       <div class="controls">
-        <input id="modelSearch" class="search-input" type="search" placeholder="Filter models by ID or family (e.g. neon, claude, flash)..." aria-label="Filter models" />
+        <input id="modelSearch" class="search-input" type="search" placeholder="Filter models (neon, claude, flash)..." aria-label="Filter models" />
         <div class="filter-bar" role="group" aria-label="Model family filters">
           <button class="filter-btn" type="button" data-family="all" aria-pressed="true">All</button>
           <button class="filter-btn" type="button" data-family="gemini-4" aria-pressed="false">Gemini 4</button>
@@ -684,14 +684,14 @@ def render_cockpit_html(
       <div class="two-col">
         <article class="card snippet-card">
           <h3>
-            <span>OpenAI Chat Completion (`curl`)</span>
+            <span>OpenAI Chat Completion (<code>curl</code>)</span>
             <button class="copy-mini" type="button" data-copy-target="curlSnippet">Copy</button>
           </h3>
           <pre id="curlSnippet" class="code">{html.escape(curl_chat)}</pre>
         </article>
         <article class="card snippet-card">
           <h3>
-            <span>Hermes Agent Config (`~/.hermes/config.yaml`)</span>
+            <span>Hermes Config (<code>~/.hermes/config.yaml</code>)</span>
             <button class="copy-mini" type="button" data-copy-target="hermesSnippet">Copy</button>
           </h3>
           <pre id="hermesSnippet" class="code">{html.escape(hermes_yaml)}</pre>
